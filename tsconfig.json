@@ -7,8 +7,11 @@
             "@wdio/globals/types",
             "expect-webdriverio",
             "@wdio/mocha-framework",
-            "@wdio/browserstack-service"
+            "@wdio/browserstack-service",
+            "reflect-metadata"
         ],
-        "target": "es2019"
+        "target": "es2019",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true        
     }
 }

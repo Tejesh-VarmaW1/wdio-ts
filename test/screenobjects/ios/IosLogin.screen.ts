@@ -1,7 +1,8 @@
 //@ts-ignore
 import IosProductsScreen from "./IosProducts.screen.ts";
+import { loginPage } from "../../../interfaces.js";
 
-class IosLoginScreen {
+class IosLoginScreen implements loginPage {
   get usernameField() {
     const usernameArea =
       '**/XCUIElementTypeTextField[`name == "test-Username"`]';
