@@ -3,7 +3,8 @@ import IosProductsScreen from "./IosProducts.screen.ts";
 
 class IosLoginScreen {
   get usernameField() {
-    const usernameArea = '**/XCUIElementTypeTextField[`name == "test-Username"`]';
+    const usernameArea =
+      '**/XCUIElementTypeTextField[`name == "test-Username"`]';
     return $(`-ios class chain:${usernameArea}`);
   }
 
@@ -16,22 +17,23 @@ class IosLoginScreen {
     return $("~test-LOGIN");
   }
 
-  get errorMsg(){
-    return $(`-ios class chain:${'**/XCUIElementTypeStaticText[`label == "Username and password do not match any user in this service."`]'}`)
+  get errorMsg() {
+    const errorText = `label == "Username and password do not match any user in this service."`;
+    return $(`-ios predicate string:${errorText}`);
   }
-  async performLogin() {
-    await this.usernameField.setValue("standard_user");
-    await this.passwordField.setValue("secret_sauce");
+  async performLogin(userName: string, pass: string) {
+    await this.usernameField.setValue(`${userName}`);
+    await this.passwordField.setValue(`${pass}`);
     await this.loginBTN.click();
   }
-  async validateLogin():Promise<void>{
-    await IosProductsScreen.productText.isDisplayed()
-    console.log("successfully validated")
+  async validateLogin(): Promise<void> {
+    await expect(IosProductsScreen.productText).toBeDisplayed();
+    console.log("successfully validated");
   }
 
-  async validateInvalidLogin():Promise<void>{
-    await (await this.errorMsg).isDisplayed()
-    console.log("Login failed") 
+  async validateInvalidLogin(): Promise<void> {
+    await expect(this.errorMsg).toBeDisplayed();
+    console.log("Login failed");
   }
 }
 

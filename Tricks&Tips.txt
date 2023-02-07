@@ -1,0 +1,22 @@
+i) To run default config file use : 
+        "npm run wdio"
+
+ii) To run special config file use :
+        "npx wdio "file path"
+        ex: npx wdio config/wdio.android.conf.ts
+
+iii) Update the wdio path in scripts in package.json
+        ex: default     "wdio": "wdio run ./wdio.conf.ts"
+            update it to     "wdio": "wdio run ./config/wdio.conf.ts"
+            or the path where wdio.conf.ts is placed
+
+iv) Remove "types":"module" from package.json
+
+v) Update         "module": "ESNEXT",   to         "module": "commonjs",   in tsconfig.json
+
+vi) Update        "target": "es2022" to         "target": "es2019"    in tsconfig.json
+
+vii) For assertion do not use isDisplayed() use toBeDisplayed()
+                ex: await this.errorMsg.isDisplayed() may fail
+                so use  await expect(this.errorMsg).toBeDisplayed()
+

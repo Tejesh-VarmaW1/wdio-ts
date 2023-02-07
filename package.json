@@ -11,6 +11,6 @@
     "typescript": "^4.9.5"
   },
   "scripts": {
-    "wdio": "wdio run ./config/wdio.android.conf.ts"
+    "wdio": "wdio run ./config/wdio.conf.ts"
   }
 }
