@@ -12,6 +12,7 @@
         ],
         "target": "es2019",
         "experimentalDecorators": true,
-        "emitDecoratorMetadata": true        
+        "emitDecoratorMetadata": true,
+        "lib": ["ES6"]       
     }
 }

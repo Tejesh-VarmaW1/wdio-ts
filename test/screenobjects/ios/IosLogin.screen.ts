@@ -1,8 +1,12 @@
 //@ts-ignore
-import IosProductsScreen from "./IosProducts.screen.ts";
-import { loginPage } from "../../../interfaces.js";
+import IosProductsScreen from "./IosProducts.screen";
+import { injectable } from "inversify";
+import "reflect-metadata";
+import { loginSymbol } from "../../../containers/login/login.symbol";
+import { Login } from "../../abstract classes/Login";
 
-class IosLoginScreen implements loginPage {
+@injectable()
+class IosLoginScreen extends Login {
   get usernameField() {
     const usernameArea =
       '**/XCUIElementTypeTextField[`name == "test-Username"`]';

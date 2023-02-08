@@ -3,7 +3,7 @@ import { config } from "./wdio.conf.ts";
 
 (config.user = "rudrarajutejeshv_K3c1Y4"),
   (config.key = "Z3JcVKaxzsiKwzRUKJMK"),
-  (config.specs = ["C:/Cigna/wdio-ts/test/specs/android/loginOps.spec.ts"]),
+  (config.specs = ["C:/Cigna/wdio-ts/test/specs/inversifySpecs/login.spec.ts"]),
   (config.capabilities = [
     {
       platformName: "Android",

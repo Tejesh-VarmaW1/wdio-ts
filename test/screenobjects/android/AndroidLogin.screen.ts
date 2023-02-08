@@ -1,11 +1,12 @@
 //@ts-ignore
 import AndroidProductsScreen from "./AndroidProducts.screen.ts";
-import { loginPage } from "../../../interfaces.js";
-import { injectable, inject } from "inversify";
+import { injectable } from "inversify";
 import "reflect-metadata";
-import { TYPES } from "../../../types";
+import { loginSymbol } from "../../../containers/login/login.symbol";
+import { Login } from "../../abstract classes/Login";
 
-export default class AndroidLoginScreen implements loginPage {
+@injectable()
+export default class AndroidLoginScreen extends Login {
   get usernameField() {
     return $("~test-Username");
   }
