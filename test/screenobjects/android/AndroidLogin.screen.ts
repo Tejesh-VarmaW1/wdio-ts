@@ -1,7 +1,5 @@
-//@ts-ignore
-import AndroidProductsScreen from "./AndroidProducts.screen.ts";
-import { injectable } from "inversify";
 import "reflect-metadata";
+import { injectable } from "inversify";
 import { loginSymbol } from "../../../containers/login/login.symbol";
 import { Login } from "../../abstract classes/Login";
 

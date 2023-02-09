@@ -8,6 +8,6 @@ describe("Inversify test ", () => {
   it("Sauce demo validate invalid access", async () => {
     await login.performLogin("standard", "secret_sauce");
 
-    await login.validateLogin();
+    await login.validateInvalidLogin();
   });
 });
