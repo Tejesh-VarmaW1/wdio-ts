@@ -1,4 +1,10 @@
-class IosProductScreen {
+import "reflect-metadata";
+import { injectable } from "inversify";
+import { Product } from "../../abstract classes/Product";
+import { productSymbol } from "../../../containers/product/product.symbol";
+
+@injectable()
+export default class IosProductScreen extends Product {
   //To click on filter option
   get filterMenu() {
     const filters =
@@ -43,7 +49,7 @@ class IosProductScreen {
   //Help done : filters by name from A to Z
   //Arguments : void
   //Return value : void
-  async filterByNameAtoZ(): Promise<void> {
+  async filterByNameA2Z(): Promise<void> {
     await this.filterMenu.click();
     await this.nameA2Z.click();
   }
@@ -52,7 +58,7 @@ class IosProductScreen {
   //Help done : filters by name from Z to A
   //Arguments : void
   //Return value : void
-  async filterByNameZtoA(): Promise<void> {
+  async filterByNameZ2A(): Promise<void> {
     await this.filterMenu.click();
     await this.nameZ2A.click();
   }
@@ -61,7 +67,7 @@ class IosProductScreen {
   //Help done : filters by price from Low to High
   //Arguments : void
   //Return value : void
-  async filterByPriceLowtoHigh(): Promise<void> {
+  async filterByPriceL2H(): Promise<void> {
     await this.filterMenu.click();
     await this.priceL2H.click();
   }
@@ -70,7 +76,7 @@ class IosProductScreen {
   //Help done : filters by price from High to Low
   //Arguments : void
   //Return value : void
-  async filterByPriceHightoLow(): Promise<void> {
+  async filterByPriceH2L(): Promise<void> {
     await this.filterMenu.click();
     await this.priceH2L.click();
   }
@@ -88,7 +94,7 @@ class IosProductScreen {
   //Help done : goes to cart screen
   //Arguments : void
   //Return value : void
-  async goToCart(): Promise<void> {
+  async go2Cart(): Promise<void> {
     await (
       await $(
         `-ios class chain:${'**/XCUIElementTypeOther[`name == "test-Cart"`]/XCUIElementTypeOther'}`
@@ -103,6 +109,25 @@ class IosProductScreen {
   async changeGridView(): Promise<void> {
     await $(`-ios predicate string:${'name == "test-Toggle"'}`).click();
   }
+
+  scrollToEnd(): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
+  scrollToBegin(): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
+  scrollIntoText(searchElement: string): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
+  clickOnProduct(productName: string): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
+  back2Products(): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
+  add2Cart(): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
 }
 
-export default new IosProductScreen();
+// export default new IosProductScreen();

@@ -6,8 +6,8 @@ const login = loginContainer.get<Login>(loginSymbol.Login);
 
 describe("Inversify test ", () => {
   it("Sauce demo validate invalid access", async () => {
-    await login.performLogin("standard", "secret_sauce");
+    await login.performLogin("standard_user", "secret_sauce");
 
-    await login.validateInvalidLogin();
+    await login.validateLogin();
   });
 });

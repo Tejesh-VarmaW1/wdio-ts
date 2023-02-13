@@ -7,4 +7,6 @@ import { Product } from "../../test/abstract classes/Product";
 
 export const productContainer = new Container();
 
-productContainer.bind<Product>(productSymbol.Product).to(AndroidProductsScreen);
+productContainer
+  .bind<Product>(productSymbol.Product)
+  .to(driver.isAndroid ? AndroidProductsScreen : IosProductsScreen);

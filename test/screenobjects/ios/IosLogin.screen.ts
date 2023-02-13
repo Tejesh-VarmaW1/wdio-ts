@@ -1,12 +1,10 @@
-//@ts-ignore
-import IosProductsScreen from "./IosProducts.screen";
-import { injectable } from "inversify";
 import "reflect-metadata";
+import { injectable } from "inversify";
 import { loginSymbol } from "../../../containers/login/login.symbol";
 import { Login } from "../../abstract classes/Login";
 
 @injectable()
-class IosLoginScreen extends Login {
+export class IosLoginScreen extends Login {
   get usernameField() {
     const usernameArea =
       '**/XCUIElementTypeTextField[`name == "test-Username"`]';
@@ -32,7 +30,11 @@ class IosLoginScreen extends Login {
     await this.loginBTN.click();
   }
   async validateLogin(): Promise<void> {
-    await expect(IosProductsScreen.productText).toBeDisplayed();
+    await expect(
+      $(
+        `-ios class chain:${'**/XCUIElementTypeStaticText[`label == "PRODUCTS"`]'}`
+      )
+    ).toBeDisplayed();
     console.log("successfully validated");
   }
 
@@ -42,4 +44,4 @@ class IosLoginScreen extends Login {
   }
 }
 
-export default new IosLoginScreen();
+// export default new IosLoginScreen();

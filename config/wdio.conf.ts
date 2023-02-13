@@ -225,14 +225,14 @@ export const config: Options.Testrunner = {
   /**
    * Function to be executed after a test (in Mocha/Jasmine only)
    * @param {Object}  test             test object
-   * @param {Object}  context          scope object the test was executed with
-   * @param {Error}   result.error     error object in case the test fails, otherwise `undefined`
-   * @param {Any}     result.result    return object of test function
-   * @param {Number}  result.duration  duration of test
-   * @param {Boolean} result.passed    true if test has passed, otherwise false
-   * @param {Object}  result.retries   informations to spec related retries, e.g. `{ attempts: 0, limit: 0 }`
+   * @param {Object}  context          scope objectT the test was executed with
+   * @param {Error}   result.error     error objectE in case the test fails, otherwise `undefined`
+   * @param {Any}     result.result    return objecJ of test function
+   * @param {Number}  result.duration  duration of Eest
+   * @param {Boolean} result.passed    true if testShas pAUssed, otherwise false
+   * @param {Object}  result.retries   informationsHto speG 21related retries, e.g. `{ attempts: 0, limit: 0 }`
    */
-  // afterTest: function(test, context, { error, result, duration, passed, retries }) {
+  // afterTest: function(test, context, { error, result, dura01ion, passed, retries }) {
   // },
 
   /**
