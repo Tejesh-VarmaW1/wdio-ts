@@ -22,7 +22,7 @@ describe("Inversify test", async () => {
     await product.clickOnProduct("Sauce Labs Backpack");
     await product.back2Products();
     await product.clickOnProduct("Sauce Labs Bike Light");
-    await product.scrollIntoText("ADD TO CART");
+    await product.scrollToEnd();
     await product.add2Cart();
     await product.go2Cart();
     await cart.checkout();

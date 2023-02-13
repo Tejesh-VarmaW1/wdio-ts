@@ -110,23 +110,29 @@ export default class IosProductScreen extends Product {
     await $(`-ios predicate string:${'name == "test-Toggle"'}`).click();
   }
 
-  scrollToEnd(): Promise<void> {
-    throw new Error("Method not implemented.");
+  async scrollToEnd(): Promise<void> {
+    await driver.execute("mobile: scroll", { direction: "down" });
   }
-  scrollToBegin(): Promise<void> {
-    throw new Error("Method not implemented.");
+  async scrollToBegin(): Promise<void> {
+    await driver.execute("mobile: scroll", { direction: "down" });
   }
-  scrollIntoText(searchElement: string): Promise<void> {
-    throw new Error("Method not implemented.");
+  async scrollIntoText(searchElement: string): Promise<void> {
+    // const productName = await $(
+    //   `-ios predicate string:${`label == "${searchElement}"`}`
+    // // );
+    // const
+    // await driver.execute("mobile: scroll", {
+    //   predicateString: `label == "${searchElement}"`,
+    // });
   }
-  clickOnProduct(productName: string): Promise<void> {
-    throw new Error("Method not implemented.");
+  async clickOnProduct(productName: string): Promise<void> {
+    await $(`-ios predicate string:${`label == "${productName}"`}`).click();
   }
-  back2Products(): Promise<void> {
-    throw new Error("Method not implemented.");
+  async back2Products(): Promise<void> {
+    await $(`-ios predicate string:${`label == "BACK TO PRODUCTS" `}`).click();
   }
-  add2Cart(): Promise<void> {
-    throw new Error("Method not implemented.");
+  async add2Cart(): Promise<void> {
+    await $(`-ios predicate string:${`label == "ADD TO CART"`}`).click();
   }
 }
 

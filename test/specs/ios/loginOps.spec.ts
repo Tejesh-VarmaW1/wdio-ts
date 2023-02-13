@@ -1,6 +1,5 @@
-import IosLoginScreen from "../../screenobjects/ios/IosLogin.screen";
-
-import IosProductsScreen from "../../screenobjects/ios/IosProducts.screen";
+import { IosLoginScreen } from "../../screenobjects/ios/IosLogin.screen";
+import IosProductScreen from "../../screenobjects/ios/IosProducts.screen";
 
 describe("TS test", () => {
   it("Verifying login operations", async () => {
@@ -8,6 +7,6 @@ describe("TS test", () => {
 
     //await IosLoginScreen.validateInvalidLogin();
 
-    await IosLoginScreen.validateLogin();
+    await IosProductScreen.
   });
 });
