@@ -4,6 +4,7 @@ import { Login } from "../../abstract classes/Login";
 import { productContainer } from "../../../containers/product/product.inversify.conf";
 import { productSymbol } from "../../../containers/product/product.symbol";
 import { Product } from "../../abstract classes/Product";
+// import utilities from "C:/Cigna/wdio-ts/utilities.json";
 
 const login = loginContainer.get<Login>(loginSymbol.Login);
 const product = productContainer.get<Product>(productSymbol.Product);
